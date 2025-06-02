@@ -44,6 +44,10 @@ firewall-cmd --reload
 systemctl restart firewalld
 systemctl restart network
 
+
+apt-get update && apt-get install tzdata  
+timedatectl set-timezone Europe/Samara
+
 useradd sshuser -u 1010
 echo "sshuser:P@ssw0rd" | chpasswd
 usermod -aG wheel sshuser
