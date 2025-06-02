@@ -63,8 +63,10 @@ awk -i inplace '/^#?PubkeyAuthentication[[:space:]]+(yes|no)$/ {sub(/^#/,""); su
 
 touch /etc/openssh/banner  
 cat <<EOF > /etc/openssh/banner 
-Authorized access only  
-EOF  
+
+Authorized access only
+
+EOF
 
 systemctl restart sshd  
 
