@@ -11,12 +11,12 @@ EOF
 
 touch /etc/net/ifaces/ens18/ipv4address
 cat <<EOF > /etc/net/ifaces/ens18/ipv4address
-192.168.1.62/26
+192.168.17.62/26
 EOF
 
 touch /etc/net/ifaces/ens18/ipv4route
 cat <<EOF > /etc/net/ifaces/ens18/ipv4route
-default via 192.168.1.1
+default via 192.168.17.1
 EOF
 
 cat <<EOF > /etc/resolv.conf
@@ -55,7 +55,7 @@ cat <<EOF > /etc/chrony.conf
 # Use public servers from the pool.ntp.org project.
 # Please consider joining the pool (https://www.pool.ntp.org/join.html).
 #pool pool.ntp.org iburst
-server 192.168.1.62 iburst prefer
+server 192.168.17.62 iburst prefer
 # Record the rate at which the system clock gains/losses time.
 driftfile /var/lib/chrony/drift
 
@@ -106,7 +106,7 @@ cat > /etc/dnsmasq.conf <<EOF
 no-resolv
 no-poll
 no-hosts
-listen-address=192.168.1.62
+listen-address=192.168.17.62
 
 server=77.88.8.8
 server=8.8.8.8
@@ -115,15 +115,15 @@ cache-size=1000
 all-servers
 no-negcache
 
-host-record=hq-rtr.au-team.irpo,192.168.1.1
-host-record=hq-srv.au-team.irpo,192.168.1.62
-host-record=hq-cli.au-team.irpo,192.168.1.66
+host-record=hq-rtr.au-team.irpo,192.168.17.1
+host-record=hq-srv.au-team.irpo,192.168.17.62
+host-record=hq-cli.au-team.irpo,192.168.17.66
 
-address=/br-rtr.au-team.irpo/192.168.0.1
-address=/br-srv.au-team.irpo/192.168.0.30
+address=/br-rtr.au-team.irpo/192.168.22.1
+address=/br-srv.au-team.irpo/192.168.22.30
 
-cname=moodle.au-team.irpo,hq-rtr.au-team.irpo
-cname=wiki.au-team.irpo,hq-rtr.au-team.irpo
+A=moodle.au-team.irpo,hq-rtr.au-team.irpo
+A=wiki.au-team.irpo,hq-rtr.au-team.irpo
 EOF
 systemctl restart dnsmasq
 
