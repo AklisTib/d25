@@ -14,12 +14,12 @@ EOF
 
 touch /etc/net/ifaces/ens18/ipv4address
 cat <<EOF > /etc/net/ifaces/ens18/ipv4address
-192.168.0.30/27
+192.168.22.30/27
 EOF
 
 touch /etc/net/ifaces/ens18/ipv4route
 cat <<EOF > /etc/net/ifaces/ens18/ipv4route
-default via 192.168.0.1
+default via 192.168.22.1
 EOF
 
 cat <<EOF > /etc/resolv.conf
@@ -91,10 +91,10 @@ apt-get install -y ansible sshpass
 sed -i 's/^#inventory      = \/etc\/ansible\/hosts/inventory      = \/etc\/ansible\/hosts/' /etc/ansible/ansible.cfg 
 echo "host_key_checking  False" | tee -a /etc/ansible/ansible.cfg
 cat > /etc/ansible/hosts <<EOF
-HQ-RTR ansible_host=192.168.1.1 ansible_user=net_admin ansible_password=P@$$word ansible_connection=network_cli ansible_network_os=ios
-BR-RTR ansible_host=192.168.0.1 ansible_user=net_admin ansible_password=P@$$word ansible_connection=network_cli ansible_network_os=ios
-HQ-SRV ansible_host=192.168.1.62 ansible_user=sshuser ansible_password=P@ssw0rd ansible_ssh_port=2024
-HQ-CLI ansilbe_host=192.168.1.66 ansible_user=sshuser ansible_password=P@ssw0rd ansible_ssh_port=2024
+HQ-RTR ansible_host=192.168.17.1 ansible_user=net_admin ansible_password=P@$$word ansible_connection=network_cli ansible_network_os=ios
+BR-RTR ansible_host=192.168.22.1 ansible_user=net_admin ansible_password=P@$$word ansible_connection=network_cli ansible_network_os=ios
+HQ-SRV ansible_host=192.168.17.62 ansible_user=sshuser ansible_password=P@ssw0rd ansible_ssh_port=2024
+HQ-CLI ansilbe_host=192.168.17.66 ansible_user=sshuser ansible_password=P@ssw0rd ansible_ssh_port=2024
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
