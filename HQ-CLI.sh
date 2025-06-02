@@ -19,6 +19,9 @@ awk -i inplace '/^#?MaxAuthTries[[:space:]]+6$/ {sub(/^#/,""); sub(/6/,"2"); pri
 awk -i inplace '/^#?PasswordAuthentication[[:space:]]+(yes|no)$/ {sub(/^#/,""); sub(/no/,"yes"); print; next} {print}' "$CONFIG_FILE"
 awk -i inplace '/^#?PubkeyAuthentication[[:space:]]+(yes|no)$/ {sub(/^#/,""); sub(/no/,"yes"); print; next} {print}' "$CONFIG_FILE"
 
+apt-get update && apt-get install tzdata  
+timedatectl set-timezone Europe/Samara
+
 touch /etc/openssh/banner 
 cat <<EOF > /etc/openssh/banner
 Authorized access only  
