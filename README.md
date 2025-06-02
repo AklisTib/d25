@@ -6,13 +6,13 @@
 
 **3.Чтобы использовать данный скрипт нужно выполнить одну команду:**
 
-```apt-get update -y && apt-get install git -y && git clone https://github.com/OOTSOSI/demo25 && cd demo25/ && chmod +x ISP.sh && sh ISP.sh```
+```apt-get update -y && apt-get install git -y && git clone https://github.com/AklisTib/d25 && cd d25/ && chmod +x ISP.sh && sh ISP.sh```
 <br/>
-```apt-get update -y && apt-get install git -y && git clone https://github.com/OOTSOSI/demo25 && cd demo25/ && chmod +x HQ-SRV.sh && sh HQ-SRV.sh```
+```apt-get update -y && apt-get install git -y && git clone https://github.com/AklisTib/d25 && cd d25/ && chmod +x HQ-SRV.sh && sh HQ-SRV.sh```
 <br/>
-```apt-get update -y && apt-get install git -y && git clone https://github.com/OOTSOSI/demo25 && cd demo25/ && chmod +x BR-SRV.sh && sh BR-SRV.sh```
+```apt-get update -y && apt-get install git -y && git clone https://github.com/AklisTib/de5 && cd d25/ && chmod +x BR-SRV.sh && sh BR-SRV.sh```
 <br/>
-```apt-get update -y && apt-get install git -y && git clone https://github.com/OOTSOSI/demo25 && cd demo25/ && chmod +x HQ-CLI.sh && sh HQ-CLI.sh```
+```apt-get update -y && apt-get install git -y && git clone https://github.com/AklisTib/d25 && cd d25/ && chmod +x HQ-CLI.sh && sh HQ-CLI.sh```
 <br/>
 <br/>
 Скрипт для управления стендами
