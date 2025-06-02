@@ -47,10 +47,12 @@ awk -i inplace '/^#?MaxAuthTries[[:space:]]+6$/ {sub(/^#/,""); sub(/6/,"2"); pri
 awk -i inplace '/^#?PasswordAuthentication[[:space:]]+(yes|no)$/ {sub(/^#/,""); sub(/no/,"yes"); print; next} {print}' "$CONFIG_FILE"
 awk -i inplace '/^#?PubkeyAuthentication[[:space:]]+(yes|no)$/ {sub(/^#/,""); sub(/no/,"yes"); print; next} {print}' "$CONFIG_FILE"
 
-touch /etc/openssh/bannermotd  
-cat <<EOF > /etc/openssh/bannermotd 
-Authorized access only  
-EOF  
+touch /etc/openssh/banner  
+cat <<EOF > /etc/openssh/banner 
+
+Authorized access only
+
+EOF
 
 systemctl restart sshd  
 
